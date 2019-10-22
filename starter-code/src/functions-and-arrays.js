@@ -1,48 +1,48 @@
 // Find the maximum
 
-const maxOfTwoNumbers = function (a,b) {
-  if (a>b) {console.log(a)}
-  else if (a<b) {console.log(b)}
-  else {console.log("same number!")};
+function maxOfTwoNumbers(a,b) {
+  const biggerNumber = Math.max(a,b);
+  return Math.max(a,b);
 }
 
-maxOfTwoNumbers (2,7)
-
-/*
-const maxOfTwoNumbers = function (a,b) {
-  if (a>b) {console.log(a)}
-  else if (a<b) {console.log(b)}
-  else {console.log("same number!")};
-}
-
-maxOfTwoNumbers (2,7)
-*/
+maxOfTwoNumbers(2,4);
 
 
+//-------------------------------------------------------------------------------------------
 // Finding Longest Word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findingLongestWord2 (aar) {
-  //wordLengthArray = [];
-  return (aar[aar.indexOf(Math.max(... aar))]);
+function findLongestWord(arr) {
+  if(arr.length === 0) {
+    return null
+  }
+  let currentLargest = "";
+  for(i = 0; i < arr.length; i++) {
+    if (arr[i].length > currentLargest.length) {
+      currentLargest=arr[i]
+    };
+  }
+  return currentLargest;
 }
 
+findLongestWord(words);
 
-findingLongestWord2(words)
 
-
+//-------------------------------------------------------------------------------------------
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumArray (arrayOfNumbers) {
   let sum = 0;
+  for(i=0; i<arrayOfNumbers.length; i++)
   for (let number of arrayOfNumbers) {
     sum += number;
   }
   return sum;
 }
 
+//-------------------------------------------------------------------------------------------
 // Calculate the Average
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -51,8 +51,30 @@ function averageNumbers(arrayOfNumbers) {
   if (arrayOfNumbers.length === 0) {
     return null; 
   }
-  const sum = sumArray(arrayOfNumbers)
+  let totalSum = 0
+  for (let nmbr of arrayOfNumbers) {
+    totalSum += nmbr
+  }
+  return totalSum / arrayOfNumbers.length
 }
+
+averageNumbers(numbersAvg)
+
+// Why can i not call the other function in this function???
+/*
+const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function averageNumbers(arrayOfNumbers) {
+  if (arrayOfNumbers.length === 0) {
+    return null; 
+  }
+  sumArray(arrayOfNumbers);
+  return sumArray / arrayOfNumbers.length
+}
+
+averageNumbers(numbersAvg)
+*/
+
 
 // Array of Strings
 const wordsArr = [
@@ -68,6 +90,20 @@ const wordsArr = [
   'palace'
 ];
 
+function averageWordLength(arrayOfWords) {
+  if (arrayOfWords.length === 0) {
+    return null; 
+  }
+  let totalSum = 0
+  for (let word of arrayOfWords) {
+    totalSum += word.length
+  }
+  return totalSum / arrayOfWords.length
+}
+
+averageWordLength(wordsArr)
+
+//-------------------------------------------------------------------------------------------
 // Unique Arrays
 const wordsUnique = [
   'crab',
@@ -83,6 +119,19 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(wordsArr2) {
+  let uniquifiedArray = [];
+  for (let i = 0; i < wordsArr2.length; i++) {
+  if (uniquifiedArray.indexOf(wordsArr2[i]) === -1) {
+    uniquifiedArray.push(wordsArr2[i])
+    } 
+  }  return uniquifiedArray
+}
+
+uniquifyArray(wordsUnique)
+
+
+//-------------------------------------------------------------------------------------------
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -95,6 +144,21 @@ const wordsFind = [
   'disobedience'
 ];
 
+function doesWordExist(wordArr3, wordSearch) {
+  for (let i = 0; i < wordArr3.length; i++) {
+    if (wordSearch === wordArr3[i]) {
+      return true
+  }
+} return false
+}
+
+doesWordExist(wordsFind, "fddg")
+
+
+// Declare a function named doesWordExist that will take in an array of words as one argument, and a word to search 
+// for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
+
+//-------------------------------------------------------------------------------------------
 // Counting Repetition
 const wordsCount = [
   'machine',
@@ -110,6 +174,18 @@ const wordsCount = [
   'matter'
 ];
 
+function howManyTimes(wordArr4, wordSearch) {
+  let reps = 0;
+  for (let i = 0; i < wordArr4.length; i++) {
+    if (wordSearch === wordArr4[i]) {
+      reps++;
+  }
+} return reps
+}
+
+howManyTimes(wordsCount, "matter")
+
+//-------------------------------------------------------------------------------------------
 // Bonus
 
 const matrix = [
@@ -134,3 +210,8 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+
+function greatestProduct (matrix) {
+  for
+}
